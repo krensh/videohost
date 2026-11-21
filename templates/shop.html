@@ -1,22 +1,45 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Магазин — TsundereTube{% endblock %}
 {% block content %}
 <h1>Магазин откупов</h1>
-<div class="shop-grid">
-    <div class="shop-card">
-        <h3>Подарок (хороший)</h3>
-        <p>ЦТ подобреет и не будет мешать 5 минут.</p>
-        <a href="#" class="card-btn">Купить</a>
+<div class="shop-list">
+
+    <div class="shop-card glass-panel">
+        <img src="{% static 'img/product.jpg' %}" alt="Товар" class="shop-img">
+        <div class="shop-info">
+            <div class="shop-title">Подарок (хороший)</div>
+            <div class="shop-desc">ЦТ подобреет и не будет мешать 5 минут.</div>
+        </div>
+        <div class="shop-buy">
+            <div class="shop-price">100 ₽</div>
+            <button class="buy-btn">Купить</button>
+        </div>
     </div>
-    <div class="shop-card">
-        <h3>Подарок (плохой)</h3>
-        <p>ЦТ обидится, но отстанет на 2 минуты.</p>
-        <a href="#" class="card-btn">Купить</a>
+
+    <div class="shop-card glass-panel">
+        <img src="{% static 'img/product.jpg' %}" alt="Товар" class="shop-img">
+        <div class="shop-info">
+            <div class="shop-title">Подарок (плохой)</div>
+            <div class="shop-desc">ЦТ обидится, но отстанет на 2 минуты.</div>
+        </div>
+        <div class="shop-buy">
+            <div class="shop-price">50 ₽</div>
+            <button class="buy-btn">Купить</button>
+        </div>
     </div>
-    <div class="shop-card">
-        <h3>Нанять киллера</h3>
-        <p>ЦТ уйдёт на 10 минут.</p>
-        <a href="#" class="card-btn">Купить</a>
+
+    <div class="shop-card glass-panel">
+        <img src="{% static 'img/product.jpg' %}" alt="Товар" class="shop-img">
+        <div class="shop-info">
+            <div class="shop-title">Нанять киллера</div>
+            <div class="shop-desc">ЦТ уйдёт на 10 минут.</div>
+        </div>
+        <div class="shop-buy">
+            <div class="shop-price">500 ₽</div>
+            <button class="buy-btn">Купить</button>
+        </div>
     </div>
+
 </div>
 {% endblock %}

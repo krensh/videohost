@@ -8,26 +8,48 @@
 </head>
 <body>
 
-    <header class="site-header">
-        <a href="{% url 'index' %}" class="logo">TsundereTube</a>
-        <nav>
-            <a href="{% url 'index' %}">Каталог</a>
-            <a href="{% url 'shop' %}">Магазин</a>
-        </nav>
-    </header>
+    <!-- Левая реклама (на сливовом фоне) -->
+    <div class="ad-column left">
+        <div class="ad-box"></div>
+        <div class="ad-box"></div>
+        <div class="ad-box"></div>
+    </div>
 
-    <main class="site-main">
-        {% block content %}{% endblock %}
-    </main>
+    <!-- Центральный блок сайта (скроллится только он) -->
+    <div class="site-container">
+        <header class="site-header">
+            <a href="{% url 'index' %}" class="logo">TsundereTube</a>
+            <nav>
+                <a href="{% url 'shop' %}">Магазин</a>
+            </nav>
+        </header>
 
-    <!-- ВИДЖЕТ ЦТ -->
+        <main class="site-main">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <!-- Правая реклама -->
+    <div class="ad-column right">
+        <div class="ad-box"></div>
+        <div class="ad-box"></div>
+    </div>
+
+    <!-- ВИДЖЕТ ЦТ (Поверх всего) -->
     <div id="tsundere-box" class="in-corner">
-        <div class="tsundere-bubble" id="tsundere-bubble">...</div>
-        <img src="{% static 'img/tsundere.png' %}" alt="ЦТ" class="tsundere-img">
-        <div class="tsundere-poll" id="tsundere-poll" hidden>
-            <button class="poll-btn" data-answer="yes">Да</button>
-            <button class="poll-btn" data-answer="no">Нет</button>
+
+        <!-- Текст (в углу сверху, в центре справа) -->
+        <div class="tsundere-content">
+            <div class="tsundere-bubble" id="tsundere-bubble">...</div>
+            <div class="tsundere-poll" id="tsundere-poll" hidden>
+                <button class="poll-btn" data-answer="yes">Да</button>
+                <button class="poll-btn" data-answer="no">Нет</button>
+            </div>
         </div>
+
+        <!-- Картинка (в углу снизу, в центре слева) -->
+        <img src="{% static 'img/tsundere.png' %}" alt="ЦТ" class="tsundere-img">
+
     </div>
 
     <script src="{% static 'js/tsundere.js' %}"></script>

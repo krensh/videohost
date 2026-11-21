@@ -9,10 +9,16 @@
 <body class="intro-body">
     <div class="intro-center">
         <img src="{% static 'img/tsundere.png' %}" alt="ЦТ" class="intro-tsundere">
-        <div class="intro-bubble">
-            Ч-чего уставился? Ладно, заходи уже...
+
+        <div class="intro-content">
+            <div class="intro-bubble">
+                Ты хочешь посмотреть со мной аниме?
+            </div>
+            <div class="intro-buttons">
+                <a href="{% url 'index' %}" class="intro-btn">Да</a>
+                <button class="intro-btn no-btn" onclick="return false;">Нет</button>
+            </div>
         </div>
-        <a href="{% url 'index' %}" class="intro-enter-btn">Войти на сайт</a>
     </div>
 </body>
 </html>
