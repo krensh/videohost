@@ -3,16 +3,33 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Мой сайт{% endblock %}</title>
+    <title>{% block title %}TsundereTube{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header>
-        <a href="/">Главная</a> | <a href="/admin/">Админка</a>
+
+    <header class="site-header">
+        <a href="{% url 'index' %}" class="logo">TsundereTube</a>
+        <nav>
+            <a href="{% url 'index' %}">Каталог</a>
+            <a href="{% url 'shop' %}">Магазин</a>
+        </nav>
     </header>
 
-    <main>
+    <main class="site-main">
         {% block content %}{% endblock %}
     </main>
+
+    <!-- ВИДЖЕТ ЦТ -->
+    <div id="tsundere-box" class="in-corner">
+        <div class="tsundere-bubble" id="tsundere-bubble">...</div>
+        <img src="{% static 'img/tsundere.png' %}" alt="ЦТ" class="tsundere-img">
+        <div class="tsundere-poll" id="tsundere-poll" hidden>
+            <button class="poll-btn" data-answer="yes">Да</button>
+            <button class="poll-btn" data-answer="no">Нет</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/tsundere.js' %}"></script>
 </body>
 </html>

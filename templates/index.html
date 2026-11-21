@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Каталог — TsundereTube{% endblock %}
+{% block content %}
+<h1>Каталог аниме</h1>
+<div class="catalog-grid">
+    {% for i in "123456" %}
+    <div class="catalog-card">
+        <div class="card-poster">Постер {{ forloop.counter }}</div>
+        <h3>Аниме {{ forloop.counter }}</h3>
+        <a href="{% url 'watch' 1 %}" class="card-btn">Смотреть</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
